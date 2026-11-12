@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>برای هوزان جونم</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap">
+<style>
+:root{
+  --choc:#1d0c0c; --choc2:#2e1212; --cream:#f7e3d4; --rose:#e0245e; --pink:#ff8fb3; --red:#c4122f; --gold:#f2c28b;
+  color-scheme: dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  min-height:100vh; font-family:"Vazirmatn",Tahoma,sans-serif; color:var(--cream);
+  background:radial-gradient(120% 70% at 50% 0%,#4a1620 0%,var(--choc2) 45%,var(--choc) 100%) fixed;
+  display:flex; justify-content:center; overflow-x:hidden;
+}
+.float{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float span{position:absolute;bottom:-40px;animation:up linear infinite;opacity:.0}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.7}100%{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+
+main{position:relative;z-index:1;width:100%;max-width:440px;padding:18px 20px 40px;text-align:center}
+
+/* big beating heart */
+.hero{margin:6px auto 0;width:150px;position:relative}
+.hero svg{width:100%;filter:drop-shadow(0 10px 28px rgba(224,36,94,.6));animation:beat 1.6s ease-in-out infinite;transform-origin:center}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.1)}30%{transform:scale(1)}45%{transform:scale(1.07)}}
+.rose{position:absolute;font-size:46px;top:62px}
+.rose.l{right:-34px;transform:rotate(-14deg)}
+.rose.r{left:-34px;transform:rotate(14deg)}
+.blossom{position:absolute;font-size:26px}
+
+/* the letter */
+.letter{
+  margin-top:20px;padding:26px 20px 24px;border-radius:34px 34px 34px 8px;
+  background:linear-gradient(160deg,#3b1519,#26100f);
+  border:1.5px solid rgba(255,143,179,.45);
+  box-shadow:0 0 0 6px rgba(224,36,94,.07),0 20px 50px rgba(0,0,0,.5);
+}
+h1{font-weight:800;font-size:1.9rem;color:var(--pink);letter-spacing:0}
+.l1{margin-top:14px;font-size:1.06rem;line-height:2.1;font-weight:400}
+.rule{display:flex;align-items:center;gap:12px;margin:16px 0;color:var(--rose)}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:rgba(224,36,94,.5)}
+.l2{font-size:1.12rem;line-height:2.1;font-weight:600;color:#ffd3e1}
+
+/* chocolate scene */
+.scene{display:flex;justify-content:center;align-items:flex-end;gap:22px;margin:24px 0 8px}
+.cup{position:relative;width:104px;height:92px}
+.steam{position:absolute;top:-34px;left:50%;transform:translateX(-50%);font-size:30px;animation:steam 3s ease-in-out infinite;opacity:.8}
+@keyframes steam{0%,100%{transform:translateX(-50%) translateY(0) scale(1);opacity:.5}50%{transform:translateX(-50%) translateY(-8px) scale(1.15);opacity:.95}}
+.mug{position:absolute;bottom:0;left:6px;width:80px;height:68px;background:linear-gradient(#d11a38,#8e0c22);border-radius:6px 6px 30px 30px;box-shadow:inset 0 -6px 10px rgba(0,0,0,.3)}
+.mug::before{content:"";position:absolute;top:-8px;left:2px;right:2px;height:20px;border-radius:50%;background:radial-gradient(ellipse at 50% 60%,#fff2e6 0 38%,#6b3a2a 40% 100%);}
+.mug::after{content:"";position:absolute;right:-24px;top:14px;width:30px;height:34px;border:7px solid #b01230;border-left:none;border-radius:0 22px 22px 0}
+.mug i{position:absolute;left:50%;top:26px;transform:translateX(-50%);font-style:normal;font-size:24px}
+.bar{display:grid;grid-template-columns:repeat(3,26px);gap:3px;padding:5px;background:linear-gradient(135deg,#d9d3d6,#9a8f95);border-radius:6px;transform:rotate(-8deg);box-shadow:0 8px 14px rgba(0,0,0,.4)}
+.bar b{height:22px;border-radius:3px;background:linear-gradient(135deg,#4a2418,#2a120b);box-shadow:inset 1px 1px 2px rgba(255,255,255,.18),inset -1px -1px 2px rgba(0,0,0,.5)}
+.bar b:nth-child(n+4){margin-top:0}
+.deco{font-size:34px}
+
+/* buttons */
+.btns{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:14px}
+button{font-family:inherit;cursor:pointer;border:none;color:#fff;border-radius:999px;-webkit-tap-highlight-color:transparent}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#yes{
+  background:linear-gradient(180deg,#f0346a,#bb0f3d);font-weight:800;
+  font-size:18px;padding:.8em 1.8em;box-shadow:0 8px 22px rgba(224,36,94,.55);
+  transition:all .35s cubic-bezier(.3,1.5,.5,1);max-width:100%;
+}
+#yes:active{transform:scale(.97)}
+#yes.huge{position:fixed;inset:0;z-index:5;border-radius:0;font-size:12vw;display:flex;align-items:center;justify-content:center;padding:20px;line-height:1.5}
+#no{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);font-size:15px;padding:.7em 1.5em;color:#e9cfc4}
+#no.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+#hint{min-height:1.6em;font-size:.9rem;color:var(--gold)}
+
+/* thank you */
+#done{position:fixed;inset:0;z-index:10;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:30px;text-align:center;
+  background:radial-gradient(circle at 50% 30%,#6b1428,#1d0c0c)}
+#done.show{display:flex}
+#done .big{font-size:84px;animation:beat 1.4s infinite}
+#done h2{font-size:1.9rem;color:var(--pink);font-weight:800}
+#done p{font-size:1.1rem;line-height:2;max-width:320px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="float" id="float"></div>
+
+<main>
+  <div class="hero">
+    <svg viewBox="0 0 100 90" aria-hidden="true"><defs><radialGradient id="g" cx="35%" cy="28%" r="75%"><stop offset="0" stop-color="#ff5c85"/><stop offset=".5" stop-color="#d1123a"/><stop offset="1" stop-color="#7d0820"/></radialGradient></defs><path d="M50 86C14 58 4 38 4 25 4 12 14 4 26 4c10 0 19 6 24 15C55 10 64 4 74 4c12 0 22 8 22 21 0 13-10 33-46 61z" fill="url(#g)"/><ellipse cx="29" cy="22" rx="10" ry="6" fill="#fff" opacity=".28" transform="rotate(-30 29 22)"/></svg>
+    <span class="rose r">🌹</span><span class="rose l">🌹</span>
+    <span class="blossom" style="top:-6px;left:-52px">🌸</span>
+    <span class="blossom" style="top:8px;right:-50px">🌸</span>
+  </div>
+
+  <section class="letter">
+    <h1>هوزان جونم 🤍</h1>
+    <p class="l1">میدونم الان حال روحی و جسمیت خوب نیست و دلت گرفته.<br>ببخشید که کنارت نیستم دستات رو بگیرم، موهات رو ناز نازی کنم 🥲</p>
+    <div class="rule">♥</div>
+    <p class="l2">میشه این شب هم تحمل کنی؟<br>زود زود تموم میشه، حالت خوب میشه 🙂؟</p>
+
+    <div class="scene" aria-hidden="true">
+      <div class="deco">🌸</div>
+      <div class="cup"><span class="steam">♡</span><div class="mug"><i>♡</i></div></div>
+      <div class="bar"><b></b><b></b><b></b><b></b><b></b><b></b></div>
+      <div class="deco">🌹</div>
+    </div>
+
+    <div class="btns">
+      <button id="yes" type="button">باشی عشقم 🥲</button>
+      <button id="no" type="button">نه نمیتونم 😭</button>
+      <div id="hint" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<div id="done" role="dialog" aria-live="polite">
+  <div class="big">💗</div>
+  <h2>آفریننننن هوزانممممم</h2>
+  <p>تو قوی‌ترینی، امشب هات چاکلتو بخور و استراحت کن تا بگذره.<br>قلب من برای تو میزنه راپونزل خانم 🙂🫀🌹</p>
+</div>
+
+<script>
+(function(){
+  var items=["❤️","💗","🌹","🌸","🍫","💖"];
+  var box=document.getElementById("float");
+  for(var i=0;i<18;i++){
+    var s=document.createElement("span");
+    s.textContent=items[i%items.length];
+    s.style.right=(Math.random()*96)+"%";
+    s.style.fontSize=(16+Math.random()*20)+"px";
+    s.style.animationDuration=(9+Math.random()*10)+"s";
+    s.style.animationDelay=(-Math.random()*14)+"s";
+    box.appendChild(s);
+  }
+
+  var yes=document.getElementById("yes"), no=document.getElementById("no"), hint=document.getElementById("hint");
+  var n=0;
+  var lines=["","واقعا؟ 🥺","دوباره فکر کن عشقم 🥹","این دکمه کار نمیکنه 😌","باشی رو بزن دیگه 💗","گنده‌تر شد ببین 😂","بزن دیگه فدات شم 🌹","دیگه جا نداره 🤭"];
+  no.addEventListener("click",function(e){
+    e.preventDefault();
+    n++;
+    no.classList.remove("shake"); void no.offsetWidth; no.classList.add("shake");
+    var size=18+n*7;
+    yes.style.fontSize=size+"px";
+    if(n>=9){yes.classList.add("huge");no.style.visibility="hidden";hint.textContent="";return;}
+    hint.textContent=lines[Math.min(n,lines.length-1)];
+  });
+  yes.addEventListener("click",function(){
+    document.getElementById("done").classList.add("show");
+  });
+})();
+</script>
+</body>
+</html>
